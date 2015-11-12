@@ -1,4 +1,4 @@
-package com.red_folder.phonegap.plugin.backgroundservice;   
+package com.repo.phonegap.plugin.backgroundservice;   
 
 interface BackgroundServiceListener {     
 	void handleUpdate(); 
