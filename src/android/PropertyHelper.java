@@ -1,4 +1,4 @@
-package com.red_folder.phonegap.plugin.backgroundservice;
+package com.repo.phonegap.plugin.backgroundservice;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -11,7 +11,7 @@ public class PropertyHelper {
 	 * Fields 
 	 ************************************************************************************************
 	 */
-	private final static String KEY_BOOTSERVICES = "com.red_folder.phonegap.plugin.backgroundservice.BootServices";
+	private final static String KEY_BOOTSERVICES = "com.repo.phonegap.plugin.backgroundservice.BootServices";
 
 	/*
 	 ************************************************************************************************
