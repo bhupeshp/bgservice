@@ -1,4 +1,4 @@
-package com.red_folder.phonegap.plugin.backgroundservice;
+package com.repo.phonegap.plugin.backgroundservice;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ import android.os.RemoteException;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
-import com.red_folder.phonegap.plugin.backgroundservice.BackgroundServiceApi;
+import com.repo.phonegap.plugin.backgroundservice.BackgroundServiceApi;
 
 public abstract class BackgroundService extends Service {
 	
