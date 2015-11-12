@@ -1,4 +1,4 @@
-package com.red_folder.phonegap.plugin.backgroundservice;
+package com.repo.phonegap.plugin.backgroundservice;
 
 import java.util.Enumeration;
 import java.util.Hashtable;
