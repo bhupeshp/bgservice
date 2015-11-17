@@ -37,7 +37,7 @@
 		<uses-permission android:name="android.permission.USE_CREDENTIALS" />
         </config-file>
         
-         <!--resource-file src="res/xml/authenticator.xml" target="res/xml/authenticator.xml" /-->
+         <resource-file src="res/xml/authenticator.xml" target="res/xml/authenticator.xml" />
         
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
   
