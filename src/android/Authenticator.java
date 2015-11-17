@@ -3,7 +3,7 @@
 // This program is licensed under the 3-clause "Modified" BSD license,
 // see LICENSE file for full definition.
 
-package com.red_folder.phonegap.plugin.backgroundservice;
+package com.repo.phonegap.plugin.backgroundservice;
 
 import android.accounts.AbstractAccountAuthenticator;
 import android.accounts.Account;
