@@ -8,9 +8,11 @@ package com.repo.phonegap.plugin.backgroundservice;
 import android.accounts.AbstractAccountAuthenticator;
 import android.accounts.Account;
 import android.accounts.AccountAuthenticatorResponse;
+import android.accounts.AccountAuthenticatorActivity;
 import android.accounts.AccountManager;
 import android.accounts.NetworkErrorException;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 
@@ -27,7 +29,17 @@ public class Authenticator extends AbstractAccountAuthenticator
     @Override
     public Bundle addAccount(AccountAuthenticatorResponse response, String accountType, String authTokenType, String[] requiredFeatures, Bundle options)
     {
-        throw new UnsupportedOperationException();
+        
+        final Intent intent = new Intent(ctx, AccountAuthenticatorActivity .class);
+        intent.putExtra(AccountManager.KEY_ACCOUNT_TYPE, accountType);
+        //intent.putExtra(Config.ARG_AUTH_TYPE, authTokenType);
+        //intent.putExtra(Config.ARG_IS_ADDING_NEW_ACCOUNT, true);
+        //intent.putExtra(AccountManager.KEY_ACCOUNT_AUTHENTICATOR_RESPONSE, response);
+
+        final Bundle bundle = new Bundle();
+        bundle.putParcelable(AccountManager.KEY_INTENT, intent);
+        return bundle;
+    
     }
 
     @Override
