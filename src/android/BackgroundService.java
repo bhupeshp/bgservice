@@ -72,7 +72,7 @@ public abstract class BackgroundService extends Service {
 		SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);  
 
 		// Should default to a minute
-		return sharedPrefs.getInt(this.getClass().getName() + ".Milliseconds", 60000 );	
+		return sharedPrefs.getInt(this.getClass().getName() + ".Milliseconds", 1800000 );	
 	}
 
 	public void setMilliseconds(int milliseconds) {
@@ -207,6 +207,8 @@ public abstract class BackgroundService extends Service {
 
 		@Override
 		public void enableTimer(int milliseconds) throws RemoteException {
+			
+			Log.d(TAG, "inside enable timer"+milliseconds);
 			// First stop it just to be on the safe side
 			stopTimerTask();
 			
