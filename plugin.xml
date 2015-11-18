@@ -37,7 +37,7 @@
 		<uses-permission android:name="android.permission.USE_CREDENTIALS" />
         </config-file>
         
-         <resource-file src="res/xml/authenticator.xml" target="res/xml/authenticator.xml" />
+         
         
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
   
@@ -49,6 +49,17 @@
             
         </config-file>
         
+        <resource-file src="res/xml/authenticator.xml" target="res/xml/authenticator.xml" />
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+	        <service android:name="AuthenticatationService">
+		    <intent-filter>
+		        <action android:name="android.accounts.AccountAuthenticator" />
+		    </intent-filter>
+		    <meta-data android:name="android.accounts.AccountAuthenticator"
+		        android:resource="@xml/authenticator" />
+		</service>
+	</config-file>
+        
 		
         <source-file src="src/android/BackgroundService.java" target-dir="src/com/repo/phonegap/plugin/backgroundservice" />
         <source-file src="src/android/BackgroundServicePlugin.java" target-dir="src/com/repo/phonegap/plugin/backgroundservice" />
@@ -56,7 +67,7 @@
         <source-file src="src/android/BootReceiver.java" target-dir="src/com/repo/phonegap/plugin/backgroundservice" />
         <source-file src="src/android/PropertyHelper.java" target-dir="src/com/repo/phonegap/plugin/backgroundservice" />
         <source-file src="src/android/ReflectionHelper.java" target-dir="src/com/repo/phonegap/plugin/backgroundservice" />
-        <source-file src="src/android/Authenticator.java" target-dir="src/com/repo/phonegap/plugin/backgroundservice" />
+        <!--source-file src="src/android/Authenticator.java" target-dir="src/com/repo/phonegap/plugin/backgroundservice" /-->
 		
         <source-file src="aidl/android/BackgroundServiceApi.aidl" target-dir="src/com/repo/phonegap/plugin/backgroundservice" />
         <source-file src="aidl/android/BackgroundServiceListener.aidl" target-dir="src/com/repo/phonegap/plugin/backgroundservice" />
