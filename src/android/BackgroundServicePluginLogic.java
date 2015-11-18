@@ -378,6 +378,8 @@ public class BackgroundServicePluginLogic {
 		public ExecuteResult enableTimer(JSONArray data)
 		{
 			ExecuteResult result = null;
+			
+			Log.d(LOCALTAG, "timer  value ", data.optInt(1, 60000));
 
 			int milliseconds = data.optInt(1, 60000);
 			try {
