@@ -104,6 +104,7 @@ public abstract class BackgroundService extends Service {
 
 			this.mUpdateTask = getTimerTask(); 			
 			//this.mTimer.schedule(this.mUpdateTask, getMilliseconds(), getMilliseconds());
+			Log.i(TAG, "restarttimer()");
 			this.mTimer.schedule(this.mUpdateTask, 30000, 30000);
         }
 	}
@@ -262,6 +263,7 @@ public abstract class BackgroundService extends Service {
 		@Override
 		public int getTimerMilliseconds() throws RemoteException {
 			//return getMilliseconds();
+			Log.i(TAG, "gettimermilliseconds");
 			return 30000;
 		}
 
@@ -320,6 +322,7 @@ public abstract class BackgroundService extends Service {
 		if (this.mUpdateTask == null) {
 			this.mUpdateTask = getTimerTask(); 			
 			int milliseconds = 30000;
+			Log.i(TAG, "setuptimer()");
 			this.mTimer.schedule(this.mUpdateTask, 1000L, milliseconds);
 		}
 
