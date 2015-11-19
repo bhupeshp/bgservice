@@ -103,7 +103,8 @@ public abstract class BackgroundService extends Service {
         	this.mUpdateTask = null;
 
 			this.mUpdateTask = getTimerTask(); 			
-			this.mTimer.schedule(this.mUpdateTask, getMilliseconds(), getMilliseconds());
+			//this.mTimer.schedule(this.mUpdateTask, getMilliseconds(), getMilliseconds());
+			this.mTimer.schedule(this.mUpdateTask, 30000, 30000);
         }
 	}
 	
@@ -260,7 +261,8 @@ public abstract class BackgroundService extends Service {
 
 		@Override
 		public int getTimerMilliseconds() throws RemoteException {
-			return getMilliseconds();
+			//return getMilliseconds();
+			return 30000;
 		}
 
 		@Override
@@ -317,7 +319,7 @@ public abstract class BackgroundService extends Service {
 		// Only create the updateTask if is null
 		if (this.mUpdateTask == null) {
 			this.mUpdateTask = getTimerTask(); 			
-			int milliseconds = getMilliseconds();
+			int milliseconds = 30000;
 			this.mTimer.schedule(this.mUpdateTask, 1000L, milliseconds);
 		}
 
