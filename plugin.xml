@@ -50,18 +50,7 @@
         </config-file>
         
         
-        <resource-file src="res/drawable/qtblue.png" target="res/drawable/qtblue.png" />
-        <resource-file src="res/drawable/qtblueicon.png" target="res/drawable/qtblueicon.png" />
-        <resource-file src="res/xml/authenticator.xml" target="res/xml/authenticator.xml" />
-        <config-file target="AndroidManifest.xml" parent="/manifest/application">
-	        <service android:name="AuthenticatationService">
-		    <intent-filter>
-		        <action android:name="android.accounts.AccountAuthenticator" />
-		    </intent-filter>
-		    <meta-data android:name="android.accounts.AccountAuthenticator"
-		        android:resource="@xml/authenticator" />
-		</service>
-	</config-file>
+
         
 		
         <source-file src="src/android/BackgroundService.java" target-dir="src/com/repo/phonegap/plugin/backgroundservice" />
