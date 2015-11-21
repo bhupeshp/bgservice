@@ -322,7 +322,7 @@ public abstract class BackgroundService extends Service {
 		// Only create the updateTask if is null
 		if (this.mUpdateTask == null) {
 			this.mUpdateTask = getTimerTask(); 			
-			int milliseconds = 18000;F
+			int milliseconds = 18000;
 			Log.i(TAG, "setuptimer()");
 			this.mTimer.schedule(this.mUpdateTask, 1000L, 1800000L);
 		}
