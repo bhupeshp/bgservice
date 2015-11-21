@@ -264,7 +264,7 @@ public abstract class BackgroundService extends Service {
 		public int getTimerMilliseconds() throws RemoteException {
 			//return getMilliseconds();
 			Log.i(TAG, "gettimermilliseconds");
-			return 1800000L;
+			return 18000;
 		}
 
 		@Override
