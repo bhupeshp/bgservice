@@ -39,6 +39,7 @@ public abstract class BackgroundService extends Service {
 	
 	private final Object mResultLock = new Object();
 	private JSONObject mLatestResult = null;
+	//private Authenticator auth;
 
 	private List<BackgroundServiceListener> mListeners = new ArrayList<BackgroundServiceListener>();
 	
@@ -71,7 +72,8 @@ public abstract class BackgroundService extends Service {
 		SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);  
 
 		// Should default to a minute
-		return sharedPrefs.getInt(this.getClass().getName() + ".Milliseconds", 60000 );	
+		//return sharedPrefs.getInt(this.getClass().getName() + ".Milliseconds", 1800000L );
+		return 18000;
 	}
 
 	public void setMilliseconds(int milliseconds) {
@@ -102,7 +104,9 @@ public abstract class BackgroundService extends Service {
         	this.mUpdateTask = null;
 
 			this.mUpdateTask = getTimerTask(); 			
-			this.mTimer.schedule(this.mUpdateTask, getMilliseconds(), getMilliseconds());
+			//this.mTimer.schedule(this.mUpdateTask, getMilliseconds(), getMilliseconds());
+			Log.i(TAG, "restarttimer()");
+			this.mTimer.schedule(this.mUpdateTask, 1800000L, 1800000L);
         }
 	}
 	
@@ -122,6 +126,7 @@ public abstract class BackgroundService extends Service {
 	public int onStartCommand(Intent intent, int flags, int startId) {
 	    super.onStartCommand(intent, flags, startId);
 	    Log.d(TAG, "onStartCommand run");
+	    //auth = new Authenticator(this);
 
 	    initialiseService();
 	    return START_STICKY;  
@@ -205,6 +210,8 @@ public abstract class BackgroundService extends Service {
 
 		@Override
 		public void enableTimer(int milliseconds) throws RemoteException {
+			
+			Log.d(TAG, "inside enable timer"+milliseconds);
 			// First stop it just to be on the safe side
 			stopTimerTask();
 			
@@ -256,7 +263,9 @@ public abstract class BackgroundService extends Service {
 
 		@Override
 		public int getTimerMilliseconds() throws RemoteException {
-			return getMilliseconds();
+			//return getMilliseconds();
+			Log.i(TAG, "gettimermilliseconds");
+			return 18000;
 		}
 
 		@Override
@@ -313,8 +322,9 @@ public abstract class BackgroundService extends Service {
 		// Only create the updateTask if is null
 		if (this.mUpdateTask == null) {
 			this.mUpdateTask = getTimerTask(); 			
-			int milliseconds = getMilliseconds();
-			this.mTimer.schedule(this.mUpdateTask, 1000L, milliseconds);
+			int milliseconds = 18000;
+			Log.i(TAG, "setuptimer()");
+			this.mTimer.schedule(this.mUpdateTask, 1000L, 1800000L);
 		}
 
 		onTimerEnabled();
