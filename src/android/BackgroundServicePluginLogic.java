@@ -485,7 +485,6 @@ public class BackgroundServicePluginLogic {
 			
 			try {
 				if (this.isServiceRunning()) {
-					service.setConfiguration(myconfig);
 					mApi.run();
 					result = new ExecuteResult(ExecuteStatus.OK, createJSONResult(true, ERROR_NONE_CODE, ERROR_NONE_MSG));
 				} else {
