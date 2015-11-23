@@ -89,6 +89,7 @@ public class BackgroundServicePluginLogic {
 	 */
 	private Context mContext;
 	private Hashtable<String, ServiceDetails> mServices = new Hashtable<String, ServiceDetails>();
+	protected JSONArray myconfig;
 
 	/*
 	 ************************************************************************************************
@@ -204,7 +205,10 @@ public class BackgroundServicePluginLogic {
 						if (ACTION_ENABLE_TIMER.equals(action)) result = service.enableTimer(data);
 						if (ACTION_DISABLE_TIMER.equals(action)) result = service.disableTimer();
 
-						if (ACTION_SET_CONFIGURATION.equals(action)) result = service.setConfiguration(data);
+						if (ACTION_SET_CONFIGURATION.equals(action)) {
+							this.myconfig = data;
+							result = service.setConfiguration(data);
+						}
 
 						if (ACTION_RUN_ONCE.equals(action)) result = service.runOnce();
 
@@ -481,6 +485,7 @@ public class BackgroundServicePluginLogic {
 			
 			try {
 				if (this.isServiceRunning()) {
+					service.setConfiguration(myconfig);
 					mApi.run();
 					result = new ExecuteResult(ExecuteStatus.OK, createJSONResult(true, ERROR_NONE_CODE, ERROR_NONE_MSG));
 				} else {
