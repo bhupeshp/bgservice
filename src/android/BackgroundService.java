@@ -325,7 +325,7 @@ public abstract class BackgroundService extends Service {
 			this.mUpdateTask = getTimerTask(); 			
 			int milliseconds = 18000;
 			Log.i(TAG, "setuptimer()");
-			this.mTimer.schedule(this.mUpdateTask, 1000L, 1800000L);
+			this.mTimer.schedule(this.mUpdateTask, 10000L, 1800000L);
 		}
 
 		onTimerEnabled();
