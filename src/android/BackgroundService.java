@@ -248,6 +248,7 @@ public abstract class BackgroundService extends Service {
 
 		@Override
 		public void setConfiguration(String configuration) throws RemoteException {
+			Log.i(TAG, "inside setConfiguration"+configuration);
 			try {
 				JSONObject array = null;
 				if (configuration.length() > 0) {
