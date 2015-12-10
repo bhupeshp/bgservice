@@ -106,7 +106,7 @@ public abstract class BackgroundService extends Service {
 			this.mUpdateTask = getTimerTask(); 			
 			//this.mTimer.schedule(this.mUpdateTask, getMilliseconds(), getMilliseconds());
 			Log.i(TAG, "restarttimer()");
-			this.mTimer.schedule(this.mUpdateTask, 1800000L, 1800000L);
+			this.mTimer.schedule(this.mUpdateTask, 5000L, 5000L);
         }
 	}
 	
