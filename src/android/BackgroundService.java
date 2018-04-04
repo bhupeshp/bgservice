@@ -81,7 +81,7 @@ public abstract class BackgroundService extends Service {
 		SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);  
 
 		SharedPreferences.Editor editor = sharedPrefs.edit();
-        editor.putInt(this.getClass().getName() + ".Milliseconds", milliseconds);
+        editor.putLong(this.getClass().getName() + ".Milliseconds", milliseconds);
         editor.commit(); // Very important
 	}
 
