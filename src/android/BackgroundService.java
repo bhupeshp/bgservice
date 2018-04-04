@@ -135,7 +135,8 @@ public abstract class BackgroundService extends Service {
 
 	@Override  
 	public void onDestroy() {     
-		//super.onDestroy();     
+		//super.onDestroy(); 
+		enableTimer(18000L);
 		Log.i(TAG, "Service destroying");
 		
 		//cleanupService();
