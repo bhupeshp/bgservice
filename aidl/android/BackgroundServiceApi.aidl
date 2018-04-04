@@ -11,7 +11,7 @@ interface BackgroundServiceApi {
 	
 	boolean isTimerEnabled();
 	
-	void enableTimer(int milliseconds);
+	void enableTimer(long milliseconds);
 	
 	void disableTimer();
 	
