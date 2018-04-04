@@ -73,8 +73,8 @@ public abstract class BackgroundService extends Service {
 
 		// Should default to a minute
 		//return sharedPrefs.getInt(this.getClass().getName() + ".Milliseconds", 1800000L );
-		//return 18000;
-		return 86400000L;
+		return 18000L;
+		//return 86400000L;
 	}
 
 	public void setMilliseconds(long milliseconds) {
@@ -107,7 +107,7 @@ public abstract class BackgroundService extends Service {
 			this.mUpdateTask = getTimerTask(); 			
 			//this.mTimer.schedule(this.mUpdateTask, getMilliseconds(), getMilliseconds());
 			Log.i(TAG, "restarttimer()");
-			this.mTimer.schedule(this.mUpdateTask, 86400000L, 86400000L);
+			this.mTimer.schedule(this.mUpdateTask, 18000L, 18000L);
         }
 	}
 	
@@ -135,10 +135,10 @@ public abstract class BackgroundService extends Service {
 
 	@Override  
 	public void onDestroy() {     
-		super.onDestroy();     
+		//super.onDestroy();     
 		Log.i(TAG, "Service destroying");
 		
-		cleanupService();
+		//cleanupService();
 	}
 	
 	/*
@@ -267,7 +267,7 @@ public abstract class BackgroundService extends Service {
 		public long getTimerMilliseconds() throws RemoteException {
 			//return getMilliseconds();
 			Log.i(TAG, "gettimermilliseconds");
-			return 86400000L;
+			return 18000L;
 		}
 
 		@Override
@@ -324,9 +324,9 @@ public abstract class BackgroundService extends Service {
 		// Only create the updateTask if is null
 		if (this.mUpdateTask == null) {
 			this.mUpdateTask = getTimerTask(); 			
-			long milliseconds = 86400000;
+			long milliseconds = 18000L;
 			Log.i(TAG, "setuptimer()");
-			this.mTimer.schedule(this.mUpdateTask, 86400000L, 86400000L);
+			this.mTimer.schedule(this.mUpdateTask, 18000L, 18000L);
 		}
 
 		onTimerEnabled();
