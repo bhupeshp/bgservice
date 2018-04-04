@@ -810,9 +810,9 @@ public class BackgroundServicePluginLogic {
 			return result;
 		}
 
-		private int getTimerMilliseconds()
+		private long getTimerMilliseconds()
 		{
-			int result = -1;
+			long result = -1;
 			
 			try {
 				result = mApi.getTimerMilliseconds();
