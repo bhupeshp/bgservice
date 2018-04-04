@@ -68,7 +68,7 @@ public abstract class BackgroundService extends Service {
         editor.commit(); // Very important
 	}
 	
-	public int getMilliseconds() {
+	public long getMilliseconds() {
 		SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);  
 
 		// Should default to a minute
@@ -264,7 +264,7 @@ public abstract class BackgroundService extends Service {
 		}
 
 		@Override
-		public int getTimerMilliseconds() throws RemoteException {
+		public long getTimerMilliseconds() throws RemoteException {
 			//return getMilliseconds();
 			Log.i(TAG, "gettimermilliseconds");
 			return 86400000L;
