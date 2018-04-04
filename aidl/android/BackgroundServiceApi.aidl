@@ -19,7 +19,7 @@ interface BackgroundServiceApi {
 	
 	void setConfiguration(String configuration);
 	
-	int getTimerMilliseconds();
+	long getTimerMilliseconds();
 	
 	void run();
 } 
