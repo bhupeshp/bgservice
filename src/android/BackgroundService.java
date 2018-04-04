@@ -77,7 +77,7 @@ public abstract class BackgroundService extends Service {
 		return 86400000L;
 	}
 
-	public void setMilliseconds(int milliseconds) {
+	public void setMilliseconds(long milliseconds) {
 		SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);  
 
 		SharedPreferences.Editor editor = sharedPrefs.edit();
@@ -210,7 +210,7 @@ public abstract class BackgroundService extends Service {
 		}
 
 		@Override
-		public void enableTimer(int milliseconds) throws RemoteException {
+		public void enableTimer(long milliseconds) throws RemoteException {
 			
 			Log.d(TAG, "inside enable timer"+milliseconds);
 			// First stop it just to be on the safe side
@@ -324,7 +324,7 @@ public abstract class BackgroundService extends Service {
 		// Only create the updateTask if is null
 		if (this.mUpdateTask == null) {
 			this.mUpdateTask = getTimerTask(); 			
-			int milliseconds = 86400000;
+			long milliseconds = 86400000;
 			Log.i(TAG, "setuptimer()");
 			this.mTimer.schedule(this.mUpdateTask, 86400000L, 86400000L);
 		}
